@@ -1,0 +1,1 @@
+A plugin for the beets music management program. Clears the terminal between beets imports.
