@@ -1,14 +1,14 @@
 import os
 from beets.plugins import BeetsPlugin
 
-class SomePlugin(BeetsPlugin):
+class ClearBeet(BeetsPlugin):
   def __init__(self):
-    super(SomePlugin, self).__init__()
+    super(ClearBeet, self).__init__()
     self.register_listener('pluginload', self.loaded)
-    self.register_listener('album_imported', self.album_imported)
+    self.register_listener('import_task_start', self.import_task_start)
 
   def loaded(self):
     self._log.info('Clearbeet plugin loaded.')
 
-  def album_imported(self):
+  def import_task_start(self):
     os.system('cls' if os.name=='nt' else 'clear')
